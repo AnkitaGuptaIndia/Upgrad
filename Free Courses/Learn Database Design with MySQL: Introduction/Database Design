@@ -1,0 +1,161 @@
+**Topic - What is data Warehouse?**
+
+Q1. Data Warehousing
+    A data warehouse holds data from multiple sources in a single repository or location. 
+    For a typical organisation, what are the benefits of a data warehouse? More than one option may be correct.
+Ans- 
+All four options are correct - 
+a) It helps integrate data from multiple source systems, enabling a central view across the enterprise.
+b) Data persistence: A data warehouse stores current as well as historical data, which may not be the case with locally stored files in MS Excel, etc.
+c) It enables analysts to create holistic business reports easily using information from multiple departments.
+d) It makes the analysis and processing of data faster compared with having isolated databases.
+     
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Structure of a Data Warehouse?**
+
+Q1. Facts and Dimensions
+    Consider a bank having thousands of ATMs across India. In every transaction, the following variables are recorded:
+    1. Withdrawal amount
+    2. Account balance after withdrawal
+    3. Transaction charge amount
+    4. Customer ID
+    5. ATM ID
+    6. Date of withdrawal
+    Which of the above are fact variables (mark all that apply)?
+Ans -
+    1. Withdrawal amount
+    2. Account balance after withdrawal
+    3. Transaction charge amount
+
+Q2. Dimensional Modelling
+    What are the benefits of having dimension variables apart from the facts? More than one option may be correct.
+Ans-
+a) It helps in performing various types of analyses, such as sector-wise, country-wise or funding-type-based analyses.
+c) It helps in extracting specific, useful information such as the total investment made in the Automobile sector in India between 2014 and 2015.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Star Schema**
+
+Q1. Star Schema
+    In a star schema, what is the name of the table that contains the metadata needed for analysing numerical/quantitative data?
+Ans- 
+b) Dimension Table
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - OLAP vs OLTP**
+
+Q1. OLAP vs OLTP
+    Which of the following statements is/are true? More than one option may be correct.
+Ans-
+d) Schemas are an essential part of creating OLAP systems.
+
+Q2. OLAP vs OLTP
+    List the type of database used to perform each of the following operations:
+    1. Making a purchase
+    2. Withdrawing cash from an ATM
+    3. Finding the average sales of a local store
+    4. Finding the profits by region for a specific product of a food MNC
+Ans-
+a) 1 - Transactional, 2 - Transactional, 3 - Transactional and data warehouse, 4 - Data warehouse
+
+Q3. OLAP vs OLTP
+    Choose the correct statement from the following:
+Ans-
+c) Data is stored differently in a transactional database and a data warehouse database.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Entity Constraint**
+
+Q1. Use of Entity Constraints 
+    Entity constraints are used to:
+Ans-
+c) Ensure that duplicate records are not entered into the table.
+
+Q2. Primary Keys
+    A Primary Key constraint always enforces both the UNIQUE and NOT NULL constraints
+Ans-
+a) True
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Referential Constraint**
+
+Q1. An Example of Referential Constraint
+    Which among the following scenarios would require the use of a referential constraint? 
+Ans-
+c) Information on the customer must be known before anything can be sold to that customer.
+
+Q2. Primary Key vs. Foreign Key
+    List two differences between a primary key and a foreign key
+Ans-
+1. Primary Key in a table can have only one whereas in a table there can be multiple Foreign Key
+2. Primary Key is unique whereas Foregin Key values are not unique.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Semantic Constraint**
+
+Q1. Semantic Constraints
+    Consider a column containing the blood groups of various blood donors. Which of the following is an example of a semantic constraint? 
+    More than one option may be correct.
+Ans-
+a) A blood group can contain one of the following values - A, B, AB and O.
+b) A blood group can only contain characters.
+
+Q2. Types of Constraints
+    Which among the following constraints does not enforce uniqueness?
+Ans-
+b) Foreign Key
+
+Q3. Types of Constraints
+    Allowing only certain values in a column and ensuring that the values are in a specified format or belong to a certain range are examples of:
+Ans- 
+b) Semantic Constraints
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - ERDs**
+
+Q1. Entity Relationship Diagram - Classic Models
+    Refer to the ERD above for the 'classic models' data set. Which of the following statements is/are correct?
+Ans-
+a) An employee is associated with zero or more customers, whereas a customer is associated with zero or one employee.
+b) A customer can have zero or more orders, whereas an order is associated with one and only one customer.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Topic - Star Schema**
+
+Q1. Fact Variables
+    How many fact variables are present in the cust_dimen table used in the market star schema explained in the video?
+Ans-
+0
+
+Q2. Fact or Dimension?
+    What type of variable is the Order_ID in the shipping_dimen table?
+    shipping_dimen
+    Ship_id VARCHAR(12)
+    Order_ID INT(11)
+    Ship_Mode VARCHAR(25)
+    Ship_Date DATE
+Ans-
+b) Dimension Variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
