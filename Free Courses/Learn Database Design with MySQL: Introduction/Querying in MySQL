@@ -1,0 +1,181 @@
+**Topic - SQL Statements and Operators**
+
+Q1. Pattern Matching
+    What will be the output of the following query: ‘select * from employee where first_name like “%ee%";'?
+Ans-
+a) It will display the details of all employees whose name contains ‘ee’.
+
+Q2. Reading the Documentation
+    Refer to the MySQL documentation online and answer the following question:
+    Which of the following wildcards are supported in SQL?
+Ans-
+d) Both % and _ (underscore)
+
+Q3. Operators
+    With SQL, how do you select all the records from a table named ‘employees’ where the ‘LastName’ is alphabetically between (and including) ‘Joshi’ and ‘Sharma’?
+Ans-
+b) select * from employees where LastName between ‘Joshi’ and ‘Sharma’;
+
+Q4. Operators
+    Which of these queries will return the same output? More than one option may be correct.
+Ans-
+a) select * from employees where EmpID in (2,3,4, 5);
+b) select * from employees where EmpID between 2 and 5;
+c) select * from employees where EmpID >= 2 and EmpID <= 5;
+
+Q5. Operators
+    What would be the result of the following statement?
+    select '54' > 'a';
+Ans-
+a) 0
+
+-- Coding Question --
+
+Basic Select
+Description
+Consider the following table employees containing the following columns:
+Write a query to determine the first names of all employees.
+
+-- Answer --
+select firstname from employees;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Aggregate Functions**
+
+Q1. Aggregate Functions
+    Which of the following are not aggregate functions in MySQL?
+Ans- 
+b) mean()
+d) mode()
+
+-- Coding Question --
+Count Querying
+Description
+Consider the employees table having the following columns.
+Write a query to retrieve the total number of employees, do the aliasing of count as totalEmployees.
+
+-- Answer --
+select count(employeenumber) as totalEmployees
+from employees;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Ordering**
+
+-- Coding Question --
+Basic Ordering
+Description
+Given an employees table with the following columns:
+Write a query to retrieve the list of first names of employees in the alphabetical order.
+
+-- Answer --
+select firstName 
+from employees
+order by firstName;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - The Having Clause**
+
+Q1. Keywords in SQL
+    List the keywords below in order of their occurrence in a query:
+    1. group by
+    2. order by
+    3. select
+    4. where
+    5. from
+    6. limit
+    7. having
+Ans-
+c) 3 - 5 - 4 - 1 - 7 - 2 - 6
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - String and Date-Time Functions**
+
+Q1. String Manipulation
+    Refer to the classic models data set. What will the output of the following set of commands?
+    select concat (reverse(firstName) , '  ', upper(lastName))
+    from employees
+    where employeeNumber=1002;
+Ans- 
+c) enaiD MURPHY
+
+Q2. Math Functions
+    abs() - Returns the absolute value of a number
+    ceil() - Returns the smallest integer value greater than or equal to the input number
+    floor() - Returns the largest integer value not greater than the argument
+    round() - Rounds a number to a specified number of decimal places
+    rand() - Returns a random floating-point value between 0 and 1
+    pow(a, b) - Returns the value a^b
+    Given the above math functions used in MySQL, what will this query return?
+    select ceil(rand() * 6);
+Ans- 
+d) A random integer from 1 to 6.
+
+-- Coding Question --
+Basic String Functions
+Description
+Given an employees table with the following columns:
+Write a query to retrieve the full names of all the employees along with their employee numbers.
+
+-- Answer --
+SELECT employeeNumber, concat(firstname, " ", lastName)
+from employees;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Regular Expressions**
+
+Q1. SQL Queries
+    Which of the following keyword(s) can be used in a query to obtain the details of all cars having the substring toy in their brand names?
+Ans-
+a) like
+b) regexp
+
+-- Coding Question --
+Basic Regex
+Description
+Given a table named employees with the following columns:
+Write a query to retrieve the employee numbers and first names of all employees having the substring on in their first names.
+
+-- Answer --
+select employeeNumber, firstName
+from employees
+WHERE firstName like '%on%';
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Nested Queries**
+
+-- Coding Question --
+Subqueries
+Description
+Given a table named customers with the following columns:
+Write a query to retrieve the names of all customers who have a credit limit greater than what La Rochelle Gifts has.
+
+-- Answer --
+SELECT customerName
+FROM customers
+WHERE CreditLimit > (
+    Select CreditLimit
+    FROM customers
+    WHERE customerName = 'La Rochelle Gifts'
+);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - CTEs**
+
+Q1. CTEs vs Derived Tables
+    A derived table is basically a subquery, except it is always in the FROM clause of a SQL statement. Given this information, is the following statement 
+    true or false?
+    Common Table Expressions are another name for derived tables.
+Ans-
+b) False
+
+
+
+
+
