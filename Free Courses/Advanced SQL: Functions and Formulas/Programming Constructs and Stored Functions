@@ -1,0 +1,90 @@
+**Topic - Case Statements**
+
+Q1. Case Statement
+    Which of the following describes a Case statement?
+Ans-
+
+A way to establish an IF-THEN-ELSE in SQL.
+
+Q2. Output
+    Consider a table named 'marks' having 9 columns as mentioned below
+    name: Name of the student
+    1: Average marks in the first semester
+    2: Average marks in the second semester
+    3: Average marks in the third semester
+    4: Average marks in the fourth semester
+    5: Average marks in the fifth semester
+    6: Average marks in the sixth semester
+    7: Average marks in the seventh semester
+    8: Average marks in the eighth semester
+    What will be the output of the below-mentioned SQL query
+    select name, 
+      ( case
+           when 1 > 2 then 'Sem 1'
+           else 'Sem 2'
+      end) as 'Sem 1/2'
+    from marks;
+Ans-
+a) The names of the students, and the semester out of 1 and 2 in which the learner scored more marks.
+
+-- Coding Question--
+Tax Slabs
+Description
+Below is the table for the income tax slabs in India.
+Here are the annual salary details (in lakhs per annum) of 10 employees working at Google Hyderabad office.
+Add another column to output the tax slabs along with the given data.
+Note: Consider the name of the column having the salaries as 'salary'.
+
+-- Answer --
+select name, salary,
+    (Case
+        when salary <= 2.5 then 'A'
+        when salary between 2.5 and 5 then 'B'
+        when salary between 5 and 10 then 'C'
+        else 'D'
+    end) as 'tax slab'
+from salaries;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Case Statements: Demonstration**
+
+-- Coding Question--
+Tax Slabs - 2
+Description
+Below is the table for calculating income tax rates for the income tax slabs in India.
+Here are the annual salary details (in lakhs per annum) of 10 employees working at Google Hyderabad office.
+Add another column to output the income tax to be paid by each employee. Make sure to round off the tax amounts to the nearest integer. 
+Also, display the tax amount as 0 if the annual salary is less than or equal to 2.5 lakhs per annum.
+Note: Consider the name of the column having the salaries as 'salary'.
+
+-- Answer --
+select name, salary,
+    (Case
+        when salary <= 2.5 then 0
+        when salary between 2.5 and 5 then round((0.05 * (salary - 2.5))*100000)
+        when salary between 5 and 10 then round((0.125 + (0.20 * (salary - 5)))*100000)
+        else round((1.125 + (0.30 * (salary - 10)))*100000)
+    end) as 'tax amount'
+from salaries;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Stored Functions**
+
+Q1. Number of Return Values
+    How many values can be returned from a given stored function?
+Ans-
+b) 1
+
+Q2. The Deterministic Keyword
+    Stored functions always return the same result for the same input parameters by default.
+Ans-
+b) False
+
+
+
+
+
+
+
