@@ -1,0 +1,44 @@
+**Topic - Indexing**
+
+Q1. Storage of Indexes
+    True or False: Indexes require disk space for storage.
+Ans-
+a) True
+
+Q2. Employee Index
+    Which of the following does the index for an employee table contain?
+Ans-
+c) Employee Id and Location on disk space for the particular record
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Indexing in Action**
+
+Q1. Indices
+    Which of the following SQL commands benefits the most by using indices?
+Ans-
+d) Where
+
+Q2. DDL
+    Which of the following DDL statements can be used to explicitly create index?
+Ans-
+a) Create Index
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Joins vs Nested Queries**
+
+-- Question--
+Joins
+List the arguments suggesting the use of joins over nested queries?
+
+-- Answer--
+Joins should be used over nesting queries only when we want to display the data from both tables/ all the tables which are used in joining.
+
+Q2. Query Processor
+    What is the role of the query processor in the execution of SQL queries?
+Ans-
+b) It implicitly converts queries from one form to another to optimise them.
+
+
+
