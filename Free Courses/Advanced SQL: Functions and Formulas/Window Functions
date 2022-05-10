@@ -1,0 +1,80 @@
+**Topic - The rank Function**
+
+-- Coding Question --
+Most Available Products
+Description
+Given a table named products with the following columns.
+Write a query to retrieve the ranks of the products in decreasing order of their quantities in stock.
+
+-- Answer --
+Select quantityInStock, rank() over (ORDER BY quantityInStock DESC) as quantityRank
+from products;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Rank vs Dense Rank**
+
+Q1. Rank Functions
+    Which of the following is not a rank function in MySQL Workbench?
+Ans-
+c) preceding_rank()
+
+Q2. Movie Ranks
+    Given below is a table containing the top 10 movies according to their IMDb ratings.
+    Find the values (A, B).
+Ans-
+b) (5, 9)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Partitioning**
+
+Q1. Window Functions
+    Which of the following statements is true for window functions? More than one option may be correct.  
+Ans-
+a) They compute a value for each and every row in the window.
+b) They require the 'over' clause.
+c) Window partitions can be defined to form groups of rows.
+
+-- Coding Question --
+Individual and Total Order Amounts
+Description
+Given a table named orderdetails with the following columns
+
+There are some orders that have multiple order amounts corresponding to the same order. Write a query to retrieve the individual and total order amounts for 
+each order along with the order numbers. Order the values in the increasing order of the order numbers. For similar order numbers, arrange the individual order 
+amounts in the decreasing order.
+
+-- Answer --
+select orderNumber, quantityOrdered * priceEach as individualOrderAmount, 
+sum(quantityOrdered * priceEach) over (partition by orderNumber) as totalOrderAmount
+from orderDetails
+order by orderNumber, individualOrderAmount desc;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Named Windows**
+
+-- Coding Question --
+Rewrite Using a Named Window
+Rewrite the following query using a named window:
+
+select *,
+rank() over (partition by Ship_Mode order by count(*)) 'Rank',
+dense_rank() over (partition by Ship_Mode order by count(*)) 'Dense Rank',
+percent_rank() over (partition by Ship_Mode order by count(*)) 'Percent Rank'
+from shipping_dimen;
+
+-- Answer --
+select *,
+rank() over s as 'Rank',
+dense_rank() over s as 'Dense Rank',
+percent_rank() over s as 'Percent Rank'
+from shipping_dimen
+window s as (partition by Ship_Mode order by count(*));
+
+
+
+
+
+
