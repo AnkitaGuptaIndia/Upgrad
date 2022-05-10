@@ -1,0 +1,81 @@
+**Topic - Set Operations**
+
+Q1. Set Theory
+    Write the value of B - A from the example in the above text.
+Ans-
+{3, 5, 7}
+
+Q2. Set Theory
+    In a class of 50 students, 10 enrolled for both English and Hindi. 32 enrolled in English in total. If the students of the class enrolled for at least one of 
+    the two subjects, then how many students enrolled for only Hindi and not English?
+    You can use a Venn Diagram to solve this question. Go through the link given below carefully, especially the first example problem.
+    https://brilliant.org/wiki/venn-diagram/
+Ans-
+b) 18
+
+Q3. Set Theory
+    If A and B are two sets, then A  ∩ (B  ∪ A) equals 
+Ans-
+a) A
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Joins**
+
+Q1. Joins in a Star Schema
+    What is the maximum number of tables that can be joined in a star schema?
+Ans- 
+b) 3
+
+Q2. Types of Joins
+    Consider the two tables below:
+    Which query would you write to retrieve all employees, whether or not they have matching departments in the departments table?
+Ans-
+a) select last_name, dept_name
+   from employees e
+   left join departments d
+   on e.dept_id = d.dept_id;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Types of Joins: A Demonstration**
+
+Q1. 'On' vs 'Using' Keyword
+    Every SQL statement containing a 'join' keyword can be rewritten with a 'using' keyword.
+Ans-
+b) False
+
+-- Coding Question --
+Types of Joins
+Description
+Given a table named customers and a table named orders with the following columns:
+Write a query to list the names of all customers who have placed at least one order.
+
+-- Answer --
+Select distinct customerName 
+from customers INNER JOIN orders USING(customerNumber);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Outer Joins: A Demonstration**
+
+Q1. Inner vs. Outer Join
+    What is the difference between an inner join and an outer join operation?
+Ans-
+c) Outer join preserves a few values that are otherwise lost in the inner join.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------     
+     
+**Topic - Set Operations with SQL**
+
+Q1. Union vs. Union all
+    It's preferable to use 'union all' instead of 'union' in a query.
+Ans-
+b) False
+
+
+
+
+
+
+
