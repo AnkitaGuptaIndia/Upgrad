@@ -1,0 +1,167 @@
+/* Refresher */
+
+-- Question 1 --
+List
+Which of the following will make a list?
+
+-- Answer --
+a) L = [1, 2, 3, 4]
+b) L = [i for i in range(1, 5)]
+
+-- Question 2 --
+Output
+What will be the output of the following code
+L=[2, 3, 4, 2, 1, 2, 3]
+print(L.index(2))
+
+-- Answer --
+a) 0
+
+-- Question 3 --
+What is K
+What is K in the following code?
+L = [2, 1, 2, 4, 5, 3, 6]
+K = 4 in L
+
+-- Answer --
+b) Boolean saying if 4 is in List or not
+
+-- Question 4 --
+Many Ways
+Given L=[10,20,30,40,50,60,70,80,90,100], how will you get a list [20, 40, 60, 80]
+
+-- Answer --
+d) L[1:-1:2]
+f) [L[i] for i in range(1,9,2)]
+
+-- Question 5 --
+How to Append
+How will you add the list A = [10, 20, 30] at the end of list B = [45, 35, 25], making the final list as [45, 35, 25, 10, 20, 30].
+
+-- Answer --
+b) B.extend(A)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Smallest Element
+Description
+You have to find and print the smallest element of the list given as input. 
+
+-- Answer --
+import ast
+input_str = input()
+input_list = ast.literal_eval(input_str)
+
+smallest = input_list[0]
+
+for i in range(len(input_list)-1):
+    if smallest > input_list[i]:
+        smallest = input_list[i]
+
+print(smallest)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Above Average
+Description
+Finding the average of the data and comparing it with other values is often encountered while analysing the data. Here you will do the same thing. 
+The data will be provided to you in a list. You will also be given a number check.  You will return whether the number check is above average or no.
+
+-- Answer --
+import ast
+input_str = input()
+input_list = ast.literal_eval(input_str)
+
+data= input_list[0]
+check= input_list[1]
+
+avg = sum(data)/len(data)
+print(check > avg)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Recruit New Members
+Description
+Suppose you are a manager as a big firm and now are looking for new members for your team. You sent out an advertisement and have received a few applications. 
+You have a habit of scoring people on a scale of 100. You have given scores to all the members of your team and the new applications. 
+The process of selection is going to be very straightforward if the applicant improves the average of the team then you hire the applicant to join the team or 
+else reject the application. Remember the order of processing applications is going to be important here.
+
+You may see this as an extension of the previous problem, which it is. You may use the code written in the previous question as a function to improve the code quality.
+
+-- Answer --
+import ast
+team = ast.literal_eval(input())
+new_recruit = ast.literal_eval(input())
+
+def average(l):
+    avg = sum(l)/len(l)
+    return avg
+final_team = team[:]
+
+for item in new_recruit:
+    average_team = average(final_team)
+    if item > average_team:
+        final_team.append(item)
+print(final_team)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Calendar
+Description
+You are planning to go to your friend's wedding and you have long events all month, lasting at least a few days. 
+You have the start and end dates of events and your task is to find out events overlapping with the wedding date.
+
+The code for taking input has already been written for you, please don't modify that, but do read and try to understand the way input has been taken. 
+You will be asked to take input on your own for most of the problems here onwards. Taking data in a suitable format is an important skill for a Data Scientist.
+
+-- Answer --
+import ast
+input_str1 = input()
+input_list1 = ast.literal_eval(input_str1)
+events = input_list1
+wedding = int(input())
+
+count = 0
+
+for event in events:
+    if wedding in range(event[0], event[1]):
+        count += 1
+print(count)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Fenced Matrix
+Description
+You will be given two positive integers m and n. You have to make a list of lists (which can be visualised as a matrix) of size m*n, that is m sublists (rows), 
+with each sublists having n integers (columns). The matrix should be such that it should have 1 on the border and 0 everywhere else. See sample input and output 
+for more clarification.
+
+-- Answer --
+import ast
+input_list = ast.literal_eval(input())
+m = input_list[0]
+n = input_list[1]
+
+my_matrix = [([0]*n) for i in range(m)]
+
+for i in range(m):
+    for j in range(n):
+        if i == 0 or j==0 or i==m-1 or j==n-1:
+            my_matrix[i][j] = 1
+
+for i in my_matrix:
+    print(i)
+    
+
+
+
+
+
+
+
+
