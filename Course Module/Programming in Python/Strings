@@ -1,0 +1,210 @@
+/* Refresher */
+
+-- Question 1 --
+Strings
+Strings is a data structure in python. There are two types of data structures- immutable and mutable. Strings are under which category?
+
+-- Answer --
+b) Always Immutable
+
+-- Question 2 --
+Character
+What will be the output of the following?
+print(chr(51))
+
+-- Answer --
+a) 3
+
+-- Question 3 --
+ASCII
+Given an ASCII code, how will you find the character associated with it? Suppose the given ASCII code is 123.
+
+-- Answer --
+c) chr(123)
+
+-- Question 4 --
+Strip
+What does the following line of code do to a string S
+S.strip()
+
+-- Answer --
+d) Remove empty spaces from both ends of the string
+
+-- Question 5 --
+Map, Filter, Reduce
+Will the functions map, reduce, filter work on Strings?
+
+-- Answer --
+d) All three will work
+
+-- Question 6 --
+String
+Which of the following will give the output as 'upGrad'?
+
+Multiple answers may be correct.
+
+-- Answer --
+c) 'G'.join(['up','rad'])
+d) s='aabupGradaab'.strip('aab')
+e) s = 'aabupGradaab'.strip('a').strip('b').strip('a')
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Palindrome String
+Description
+Write a program to check whether a string is a palindrome or not. Print 1 if the string is a palindrome and 0 otherwise.
+
+Note: Please ensure that your program should not be case-sensitive. So, if the input is, say, “HAnnah”, then, its output should be 1.
+
+-- Answer --
+s = input()
+new_a = s.lower()
+b = new_a[::-1]
+
+if b == new_a:
+    print(1)
+else:
+    print(0)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Reverse Words
+Description
+You will be given a sentence in the form of a string. You have to reverse the order of the words in the sentence. 
+Remember not to reverse the individual words, but the order of words. Check the sample input-output for further clarification.
+
+-- Answer --
+sentence=input()
+
+new_sentence = sentence.split()
+sent = ""
+for s in new_sentence:
+    sent = s + " " + sent
+print(sent)
+
+# Alternate Method - 1
+words = sentence.split(" ")
+reversed_list = words[::-1]
+
+final_string = " ".join(reversed_list)
+print(final_string)
+
+# Alternate Method - 2
+words = sentence.split(" ")
+words.reverse()
+
+final_string = " ".join(words)
+print(final_string)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+No Spaces
+Description
+While naming entities, it is a common practice to avoid spaces. That is the reason you see so many people using underscores instead of spaces. 
+You will be given a string, containing a few spaces and random upper and lower cases. You have to write a code that will add underscore in place of spaces and 
+also capitalise the letters properly, i.e. the first letter after underscore should be in upper case and the first letter of the string should be in upper case, 
+all of the other letters should be lower case. 
+
+This type of activity is frequently encountered while starting to analyse data. This is called Data cleaning and you will learn more about it in upcoming modules.
+
+-- Answer --
+s=input()
+b = s.title().replace(" ", "_")
+print(b)
+
+# Alternate Method - 1
+s = "ankita gupTA"
+s = s.lower()
+words = s.split(" ")
+final_list = [word[0].upper() + word[1:] for word in words]
+final_string = "_".join(final_list)
+print(final_string)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Shift Vowels
+Description
+Write a program that receives a string and shifts all the vowels present in it to the beginning. Output the resultant string. 
+The order of all the vowels with respect to each other as well as the order of all the other characters with respect to each other should stay the same.
+
+-- Answer --
+s = input()
+vowel = "aeiouAEIOU"
+v = ""
+cons = ""
+for c in s:
+    if c in vowel:
+        v += c
+    else:
+        cons += c
+print(v+cons)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Common Prefix
+Description
+You will be given two strings. You have to find the largest prefix common in both the strings.
+
+-- Answer --
+string1=input()
+string2=input()
+string1 = string1.lower()
+string2 = string2.lower()
+
+l1 = len(string1)
+l2 = len(string2)
+min_len = min(l1, l2)
+for i in range(min_len):
+    if string1[i] != string2[i]:
+        break
+if i == 0:
+    print(-1)
+elif i == min_len-1:
+    print(string1[:i+1])
+else:
+    print(string1[:i])
+    
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Anagrams 
+
+-- Answer --
+s1 = "upgrad"
+s2 = "found"
+
+#s1 = s1.lower()
+#s2 = s2.lower()
+flag = 0
+
+if len(s1) != len(s2):
+    print(False)
+
+else:
+    for i in s1:
+        if i in s2:
+            flag = 1
+            continue
+        else:
+            flag = 0
+            break
+
+    if flag == 0:
+        print(False)
+    else:
+        print(True)
+
+
+
+
+
+
+
+
+
+
