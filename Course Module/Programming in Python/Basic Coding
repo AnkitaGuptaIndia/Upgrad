@@ -1,0 +1,261 @@
+/* Basic Coding Module */
+
+-- Question 1-- 
+Predict Output
+p = 4**3
+print(p)
+What will be the output of the above code snippet?
+
+-- Answer --
+c) 64
+
+-- Question 2 --
+Predict Output
+Can you predict what will be the value of 'a' after executing the following code?
+a = 21 % 4
+
+-- Answer --
+a) 1
+
+-- Question 3 --
+Division
+Predict the output of the following code.
+d = 23//5
+print(d)
+
+-- Answer --
+a) 4
+
+-- Question 4 --
+Syntax Error
+Which of the following will give a syntax error?
+
+-- Answer --
+a) if (1):
+   print (True)
+c) if (1) print(True)
+f) if (1)
+        print (True)
+
+-- Question 5 --
+Output
+What will be the output of the following code?
+for i in range(3):
+    print(i)
+    
+-- Answer --
+c) 0
+   1
+   2
+
+-- Question 6 --
+Print
+Which of the following will give output as:
+11 12 13
+14
+-- Answer --
+a) print('11 12 13 \n14')
+c) a=11
+   b=12
+   c=13 
+   d=14
+   print(a,b,c)
+   print(d)
+d) a=11
+   b=12
+   c=13 
+   d=14
+   print('{0} {1} {2}'.format(a,b,c) )
+   print(d)
+e) a=11
+   b=12
+   c=13 
+   d=14 
+   print('%d %d %d' %(a,b,c))
+   print(d)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Swapping
+Description
+You are given two integer variables,  x and y. You have to swap the values stored in x and y.
+
+-- Answer --
+#input() takes input in form of the string
+in_string=input()
+
+#here extract the two numbers from the string
+my_list = in_string.split(",")
+x = int(my_list[0])
+y = int(my_list[1])
+
+#print x and y before swapping
+print("x before swapping: {0}".format(x))
+print("y before swapping: {0}".format(y))
+print()
+#Writing your swapping code here
+temp = x
+x = y
+y = temp
+#print x and y after swapping
+print("x after swapping: {0}".format(x))
+print("y after swapping: {0}".format(y))
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Even Or Odd
+Description
+Given an integer, print whether it is Even or Odd.
+
+-- Answer --
+num=int(input())
+
+#start writing your code from here
+if num%2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Beautiful Pretty Sexy
+Description
+A number k is beautiful if it is of the form 3n+1, is pretty if it is of the form 3n+2 and is sexy if it is of form 3n.
+Given a number k, print if it is beautiful, pretty or sexy.
+
+-- Answer --
+k=int(input())
+
+#check if the number is beautiful, pretty or sexy
+if k%3 == 0:
+    print("sexy")
+elif k%3 == 1:
+    print("beautiful")
+else:
+    print("pretty")
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Alarm Clock
+Description
+You're trying to automate your alarm clock by writing a function for it. You're given a day of the week encoded as 1=Mon, 2=Tue, ... 6=Sat, 7=Sun, and 
+whether you are on vacation as a boolean value (a boolean object is either True or False. Google "booleans python" to get a better understanding). 
+Based on the day and whether you're on vacation, write a function that returns a time in form of a string indicating when the alarm clock should ring. 
+When not on a vacation, on weekdays, the alarm should ring at "7:00" and on the weekends (Saturday and Sunday) it should ring at "10:00". 
+While on a vacation, it should ring at "10:00" on weekdays. On vacation, it should not ring on weekends, that is, it should return "off".
+
+-- Answer --
+import ast
+input_str = input()
+input_list = ast.literal_eval(input_str)
+day_of_the_week = input_list[0] #first element is an integer denoting the day of the week
+is_on_vacation = input_list[1] #this is a boolean denoting if its vacation or not
+
+# write your code here
+if is_on_vacation:
+    if day_of_the_week in (6, 7):
+        print("off")
+    else:
+        print("10:00")
+else:
+    if day_of_the_week in (6, 7):
+        print("10:00")
+    else:
+        print("7:00")
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Factorial
+Description
+Factorial is a mathematical function denoted by '!'. It is defined as
+
+n factorial = n!= 1*2*3...*(n-1)*n
+
+In this question, you have to make a function that will take an integer as input, and return the factorial of that integer if that integer is greater than 
+or equal to zero and return -1 if the number is less than zero or negative.
+Note: the function doesn't return print the factorial but returns it.
+
+-- Answer --
+number= int(input())
+
+def factorial(n):
+    #write the funtion here that finds and RETURNS factorial of next
+    if n < 0:
+        return -1
+    elif n == 0:
+        return 1
+    else:
+        return reduce(lambda x, y: x*y, range(1, n+1))
+
+k=factorial(number)
+print(k)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Reverse The Digits
+Description
+You will be given a number. You have to reverse the digits of the number and print it.
+
+-- Answer --
+n = int(input())
+f = 0
+
+while n > 0:
+    f = f*10
+    f = f + n%10
+    n = n//10
+print(f)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+How Many Chocolates?
+Description
+Sanjay loves chocolates. He goes to a shop to buy his favourite chocolate. There he notices there is an offer going on, upon bringing 3 
+wrappers of the same chocolate, you will get new chocolate for free. If Sanjay has m Rupees. 
+
+How many chocolates will he be able to eat if each chocolate costs c Rupees?
+
+-- Answer --
+import ast
+inp_list = ast.literal_eval(input())
+m = inp_list[0]
+c = inp_list[1]
+
+choc = m//c
+wrapper = m//c
+
+while wrapper//3 != 0:
+    choc = choc + wrapper//3
+    wrapper = wrapper//3 + wrapper%3
+
+print(choc)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Coding Question --
+Print The Pattern
+Description
+Printing different patterns is a very good exercise to reinforce iteration through loops and strong logic building. 
+Here you will be given a positive integer and you will generate pattern based on that integer.
+
+-- Answer --
+n = int(input())
+
+for i in range(1, n+1):        # for rows in the pattern
+    for j in range(n-i):       # for number of spaces
+        print(" ", end="")
+    for k in range(i-1):
+        print("*_", end="")
+    print("*")
+
+
+
+
+
