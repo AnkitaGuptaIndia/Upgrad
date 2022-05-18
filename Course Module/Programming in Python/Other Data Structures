@@ -1,0 +1,53 @@
+/* Refresher */
+
+-- Question 1 --
+Intersection
+Which of the following codes can be used to find intersection of sets A, B and C.
+-- Answer --
+a) set.intersection(A, B, C)
+b) A.intersection(B, C)
+
+-- Question 2 --
+Immutables
+Which of the following are immutable?
+-- Answer --
+a) Elements of Sets
+d) Tuples
+
+-- Question 3 --
+Dictionary
+Which of the following will create a dictionary?
+-- Answer --
+a) d = {}
+c) d=dict(a=1, b=2)
+e) d={'a':1, 'b':2}
+
+-- Question 4 --
+Keys
+What will the following code return?
+d={'a':64, 'b':65, 'c':66, 'd':67}
+print(d['e'])
+-- Answer --
+d) Error
+
+-- Question 5 --
+Keys
+What will be the output of the following code?
+d={'a':64, 'b':65, 'c':66, 'd':67}
+print(d.keys())
+-- Answer --
+d) ['a', 'b', 'c', 'd']
+
+-- Question 6 --
+Values?
+Dictionary can be seen as a map between two entities called keys and values. All the keys in the list can be accessed by d.keys() where d is the dictionary. 
+How are values accessed in the dictionary?
+Assume name of the dictionary is d.
+-- Answer --
+d.values()
+
+-- Question 7 --
+Deleting Key
+Suppose dict_1 = {"Python'':40, "R'':45}. What command should be used to delete the entry "R"?
+-- Answer --
+del dict_1['R']
